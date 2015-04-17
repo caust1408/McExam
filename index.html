@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+
+
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script> 
+<script src="questions.js"></script>
+
+
+
+
+</head>
+<body>
+<div class="oww">
+<div class="radio">
+  <label><input type="radio" name="optradio" class="">Option 1</label>
+</div>
+</div>
+
+<div>
+  <label><input type="radio" name="optradio">Option 2</label>
+</div>
+<div class="radio disabled">
+  <label><input type="radio" name="optradio">Option 3</label>
+</div>
+
+
+
+<div class="row">
+  
+  <div class="col-lg-6">
+     <form>
+    <div class="radio">
+    <input type="radio" name="optradio">hiii
+    </div>
+    <div>
+        <input type="radio" name="optradio">wow
+        </div>
+        <div>
+        <input type="radio" name="optradio">nice
+        </div>
+       
+    
+      <p class="craig"></p>
+     
+    </div><!-- /input-group -->
+     </form>
+  </div><!-- /.col-lg-6 -->
+</div><!-- /.row -->
+
+
+
+
+<!-- <script type="text/javascript" src="choice.js"></script> -->
+
+<script type="text/javascript" >
+
+$(function() {
+  
+var data = JSON.parse(multiple);
+
+
+function cool(word) {
+for (var i = 0;i < 7; i++) {
+  var qtion = data[i];
+  var question = qtion.text;
+     console.log(JSON.stringify(question)); 
+     $('.craig').append('<div class="cmp"></div>'); 
+     $('.cmp:last').html(question);
+     //console.log('\n the answer is ' + JSON.stringify(ques.answer) + '\n'); 
+
+   for (var j =0;j < 4; j++) {
+    var choices = qtion.decoys[j];
+     $('.craig').append(
+      '<input type="radio" aria-label="..." class="bat" name="optradio"><label id="choice" class="lab"></label><br>');
+
+    $('.lab:last').html(choices);
+
+
+    console.log('    ' + JSON.stringify(qtion.decoys[j]));
+   }
+   
+
+}
+}
+cool(data);
+});
+
+///////////////html////////////////
+
+
+  
+
+</script>
+
+
+  
+
+
+
+
+</body>
+</html>
